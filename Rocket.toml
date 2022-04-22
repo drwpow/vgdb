@@ -1,0 +1,5 @@
+[default]
+template_dir = "views"
+
+[global.databases]
+vgdb = { url = "db/vgdb.sqlite" }

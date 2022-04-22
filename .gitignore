@@ -1,0 +1,6 @@
+.cargo/
+*.bak
+Cargo.lock
+node_modules
+target
+vgdb.sqlite3
