@@ -4,14 +4,16 @@
     <meta charset="utf-8" />
     <meta type="viewport" content="width=device-width" />
     <title>{{ title }}</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
   </head>
 
   <body>
-    <h1>{{ title }}!</h1>
     <h3>Platforms</h3>
     <ul>
-      {% for s in platforms %}
-      <li>{{ s.title }}</li>
+      {% for p in platforms %}
+      <li>
+        <a href="/games/{{ p.id }}">{{ p.title }}</a>
+      </li>
       {% endfor %}
     </ul>
   </body>

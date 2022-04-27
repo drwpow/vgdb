@@ -18,5 +18,6 @@ pub struct Game {
     pub release_date: String,
     pub boxart_url: Option<String>,
     pub description: Option<String>,
-    pub metacritic_score: Option<i32>,
+    pub metacritic_score: Option<f32>,
+    pub game_ranking_score: Option<f32>,
 }

@@ -1,0 +1,189 @@
+:root {
+  --gray-00: #000000;
+  --gray-05: #010101;
+  --gray-10: #060606;
+  --gray-15: #131313;
+  --gray-20: #222222;
+  --gray-30: #414141;
+  --gray-40: #636363;
+  --gray-50: #878787;
+  --gray-60: #aeaeae;
+  --gray-65: #c2c2c2;
+  --gray-70: #d6d6d6;
+  --gray-75: #eaeaea;
+  --gray-80: #ffffff;
+  --font-trade-gothic: "Trade Gothic Next Condensed", "Helvetica Condensed",
+    system-ui, sans-serif;
+  --font-montreal-neue: "Montreal Neue", Helvetica, system-ui, sans-serif;
+
+  --u18: 11.390625em;
+  --u17: 9.950627481136905em;
+  --u16: 8.692673779389363em;
+  --u15: 7.59375em;
+  --u14: 6.63375165409127em;
+  --u13: 5.795115852926242em;
+  --u12: 5.0625em;
+  --u11: 4.422501102727513em;
+  --u10: 3.8634105686174953em;
+  --u9: 3.375em;
+  --u8: 2.9483340684850083em;
+  --u7: 2.575607045744997em;
+  --u6: 2.25em;
+  --u5: 1.9655560456566725em;
+  --u4: 1.7170713638299977em;
+  --u3: 1.5em;
+  --u2: 1.3103706971044482em;
+  --u1: 1.1447142425533319em;
+  --d1: 0.8735804647362989em;
+  --d2: 0.7631428283688879em;
+  --d3: 0.6666666666666666em;
+  --d4: 0.5823869764908659em;
+  --d5: 0.5087618855792586em;
+  --d6: 0.4444444444444444em;
+  --d7: 0.3882579843272439em;
+  --d8: 0.3391745903861724em;
+  --d9: 0.2962962962962963em;
+  --d10: 0.2588386562181626em;
+  --d11: 0.22611639359078162em;
+  --d12: 0.19753086419753085em;
+  --d13: 0.17255910414544176em;
+  --d14: 0.15074426239385438em;
+  --d15: 0.13168724279835392em;
+  --d16: 0.11503940276362785em;
+  --d17: 0.10049617492923625em;
+  --d18: 0.0877914951989026em;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  background-color: var(--gray-05);
+  color: var(--gray-60);
+  font-family: var(--font-montreal-neue);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.gameBox\/title {
+  color: var(--gray-80);
+}
+
+.header {
+  display: grid;
+  grid-gap: 1.5rem;
+  font-family: 1rem;
+  margin: 0;
+  padding: 3rem;
+}
+
+.header\/nav {
+  margin: 0;
+  padding: 0;
+}
+
+.header\/nav\/link {
+  color: var(--gray-40);
+  display: inline-block;
+  font-size: var(--d2);
+  letter-spacing: 0.025em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color linear 75ms;
+}
+
+.header\/nav\/link:hover {
+  color: var(--gray-50);
+}
+
+.header\/nav\/link\(back\) {
+  padding-left: 0.5em;
+  position: relative;
+}
+
+.header\/nav\/link\(back\)::after {
+  border-bottom-color: transparent;
+  border-left-color: currentColor;
+  border-right-color: transparent;
+  border-style: solid;
+  border-top-color: currentColor;
+  border-width: 1px;
+  content: "";
+  height: 0.5em;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-62.5%) rotate(-45deg);
+  width: 0.5em;
+}
+
+.header\/subtitle {
+  display: block;
+  font-family: var(--font-montreal-neue);
+  font-size: var(--d7);
+  color: var(--gray-60);
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.header\/title {
+  color: var(--gray-80);
+  font-family: var(--font-trade-gothic);
+  font-size: var(--u5);
+  font-weight: 400;
+  margin: 0;
+}
+
+.gameBox {
+  display: block;
+  font-size: 1rem;
+  position: relative;
+}
+
+.gameBox\/releaseDate {
+  color: var(--gray-40);
+  display: block;
+  font-family: var(--font-montreal-neue);
+  font-size: var(--d1);
+  margin-top: 0.5em;
+}
+
+.gameBox\/shelf {
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0 2.5rem;
+}
+
+.gameBox\/title {
+  font-family: var(--font-trade-gothic);
+  font-size: var(--u4);
+  font-weight: 400;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+@font-face {
+  font-family: "Trade Gothic Next Condensed";
+  font-weight: 400;
+  src: url("/assets/tgn-cn-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Trade Gothic Next Condensed";
+  font-weight: 700;
+  src: url("/assets/tgn-cn-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal";
+  font-weight: 1 999;
+  src: url("/assets/mn.ttf") format("truetype");
+}

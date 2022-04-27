@@ -15,6 +15,8 @@ CREATE TABLE games (
   release_date TEXT NOT NULL,
   boxart_url TEXT,
   description TEXT,
+  metacritic_score REAL,
+  game_ranking_score REAL,
 
   FOREIGN KEY(platform_id) REFERENCES platforms(id)
 );
@@ -35,9 +37,9 @@ INSERT INTO platforms (id, release_date, title, logo_url) VALUES
   (9, "2006-11-11", "PS3", "/platform/ps3.png");
 
 -- SNES: 3
-INSERT INTO games (platform_id, release_date, title, boxart_url) VALUES
-  (3, "1990-11-21", "Super Mario World", "/title/super-mario-world.png"),
-  (3, "1991-11-21", "The Legend of Zelda: A Link to the Past", "/title/zelda-link-to-the-past.png"),
-  (3, "1994-03-19", "Super Metroid", "/title/super-metroid.png"),
-  (3, "1994-08-27", "Earthbound", "/title/earthbound.png");
+INSERT INTO games (platform_id, release_date, title, boxart_url, game_ranking_score) VALUES
+  (3, "1990-11-21", "Super Mario World", "/title/super-mario-world.png", 94.44),
+  (3, "1991-11-21", "The Legend of Zelda: A Link to the Past", "/title/zelda-link-to-the-past.png", 92.87),
+  (3, "1994-03-19", "Super Metroid", "/title/super-metroid.png", 96.55),
+  (3, "1994-08-27", "Earthbound", "/title/earthbound.png", 88.33);
 -- DATA END

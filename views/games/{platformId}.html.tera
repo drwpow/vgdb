@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta type="viewport" content="width=device-width" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+
+  <body>
+    <header class="header header(platform)">
+      <nav class="header/nav">
+        <a class="header/nav/link header/nav/link(back)" href="/">All Games</a>
+      </nav>
+      <h3 class="header/title">
+        {{ platform.title }}
+        <small class="header/subtitle">
+          {% set games_count = games | length %}
+          {{ games | length }}
+          game{{ games_count | pluralize(singular="", plural="s") }}
+        </small>
+      </h3>
+    </header>
+    <ul class="gameBox/shelf">
+      {% for g in games %}
+      <li class="gameBox gameBox({{ platform.title }})">
+        <div class="gameBox/boxArt gameBox/boxArt({{ platform.title }})">
+          <img class="gameBox/boxArt/img" src="{{ g.boxart_url }}" />
+        </div>
+        <h3 class="gameBox/title">{{ g.title }}</h3>
+        <time class="gameBox/releaseDate" datetime="{{ g.release_date }}">
+          {{ g.release_date | date(format="%Y / %m / %d") }}
+        </time>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
