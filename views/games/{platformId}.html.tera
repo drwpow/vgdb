@@ -31,15 +31,41 @@
     <ul class="gameBox/shelf">
       {% for g in games %}
       <li class="gameBox gameBox({{ platform.title }})">
-        <div class="gameBox/boxArt gameBox/boxArt({{ platform.title }})">
+        <div
+          class="gameBox/boxArt gameBox/boxArt({{ platform.title }})"
+          data-tilt
+        >
+          <div class="gameBox/boxArt/side gameBox/boxArt/side(x)"></div>
+          <div class="gameBox/boxArt/side gameBox/boxArt/side(y)"></div>
           <img class="gameBox/boxArt/img" src="{{ g.boxart_url }}" />
         </div>
         <h3 class="gameBox/title">{{ g.title }}</h3>
         <time class="gameBox/releaseDate" datetime="{{ g.release_date }}">
           {{ g.release_date | date(format="%Y / %m / %d") }}
         </time>
+        <div class="gameBox/scoreCard">
+          <div class="score" title="Game Rankings: {{ g.game_ranking_score }}%">
+            <svg viewBox="0 0 36 36" class="score/graph">
+              <circle
+                class="score/graph/max"
+                cx="18"
+                cy="18"
+                r="15.915494309189533"
+              ></circle>
+              <circle
+                class="score/graph/value"
+                cx="18"
+                cy="18"
+                r="15.915494309189533 "
+                stroke-dasharray="{{ g.game_ranking_score }}px, 100px"
+              ></circle>
+            </svg>
+            <div class="score/number">{{ g.game_ranking_score }}</div>
+          </div>
+        </div>
       </li>
       {% endfor %}
     </ul>
+    <script type="module" src="/assets/js/tilt-effect.js"></script>
   </body>
 </html>

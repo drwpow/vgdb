@@ -39,7 +39,14 @@ INSERT INTO platforms (id, release_date, title, logo_url) VALUES
 -- SNES: 3
 INSERT INTO games (platform_id, release_date, title, boxart_url, game_ranking_score) VALUES
   (3, "1990-11-21", "Super Mario World", "/assets/snes-usa/Super Mario World (USA).png", 94.44),
+  (3, "1991-10-31", "Super Castlevania IV", "/assets/snes-usa/Super Castlevania IV (USA).png", 81.21),
   (3, "1991-11-21", "The Legend of Zelda: A Link to the Past", "/assets/snes-usa/Legend of Zelda, The - A Link to the Past (USA).png", 92.87),
+  (3, "1993-08-06", "Secret of Mana", "/assets/snes-usa/Secret of Mana (USA).png", 87.28),
+  (3, "1993-12-17", "Mega Man X", "/assets/snes-usa/Mega Man X (USA).png", 87.27),
   (3, "1994-03-19", "Super Metroid", "/assets/snes-usa/Super Metroid (USA).png", 96.55),
-  (3, "1994-08-27", "EarthBound", "/assets/snes-usa/EarthBound (USA).png", 88.33);
+  (3, "1994-04-02", "Final Fantasy III", "/assets/snes-usa/Final Fantasy III (USA).png", 93.96),
+  (3, "1994-08-27", "EarthBound", "/assets/snes-usa/EarthBound (USA).png", 88.33),
+  (3, "1994-11-18", "Donkey Kong Country", "/assets/snes-usa/Donkey Kong Country (USA).png", 87.81),
+  (3, "1995-03-11", "Chrono Trigger", "/assets/snes-usa/Chrono Trigger (USA).png", 94.88),
+  (3, "1996-03-09", "Super Mario RPG: Legend of the Seven Stars", "/assets/snes-usa/Super Mario RPG - Legend of the Seven Stars (USA).png", 89.12);
 -- DATA END

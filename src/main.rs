@@ -88,6 +88,14 @@ async fn games_by_platform(db: Db, id: i64) -> Template {
             conn
               .prepare("SELECT id, title, boxart_url, release_date, description, metacritic_score, game_ranking_score FROM games WHERE platform_id = ?1 ORDER BY release_date ASC")?
                 .query_map(params![id], |row| {
+                    let metacritic_score = match row.get::<_, Option<f32>>(5)? {
+                        Some(s) => s.round(),
+                        None => 0.0_f32,
+                    };
+                    let game_ranking_score = match row.get::<_, Option<f32>>(6)? {
+                        Some(s) => s.round(),
+                        None => 0.0_f32,
+                    };
                     let g = Game {
                         id: row.get(0)?,
                         platform_id: id,
@@ -95,8 +103,8 @@ async fn games_by_platform(db: Db, id: i64) -> Template {
                         boxart_url: row.get(2)?,
                         release_date: row.get(3)?,
                         description: row.get(4)?,
-                        metacritic_score: row.get(5)?,
-                        game_ranking_score: row.get(6)?,
+                        metacritic_score: Some(metacritic_score),
+                        game_ranking_score: Some(game_ranking_score),
                     };
                     Ok(g)
                 })?
