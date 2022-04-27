@@ -12,14 +12,21 @@
       <nav class="header/nav">
         <a class="header/nav/link header/nav/link(back)" href="/">All Games</a>
       </nav>
-      <h3 class="header/title">
-        {{ platform.title }}
-        <small class="header/subtitle">
-          {% set games_count = games | length %}
-          {{ games | length }}
-          game{{ games_count | pluralize(singular="", plural="s") }}
-        </small>
-      </h3>
+      <div class="header/heading">
+        <h3 class="header/title">
+          {{ platform.title }}
+          <small class="header/subtitle">
+            {% set games_count = games | length %}
+            {{ games | length }}
+            game{{ games_count | pluralize(singular="", plural="s") }}
+          </small>
+        </h3>
+        <img
+          class="header/logo"
+          src="{{ platform.logo_url }}"
+          aria-hidden="true"
+        />
+      </div>
     </header>
     <ul class="gameBox/shelf">
       {% for g in games %}
